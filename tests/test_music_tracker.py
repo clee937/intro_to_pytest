@@ -19,11 +19,16 @@ def test_that_all_tracks_can_be_listed():
     mt.add(Track("Dancing Queen", "ABBA"))
     assert mt.get_playlist() == ["Waterloo - ABBA", "Dancing Queen - ABBA"], "Should return: ['Waterloo - ABBA', 'Dancing Queen - ABBA']" # --> ["Waterloo - ABBA", "Dancing Queen - ABBA"]
 
-""" When we remove a track, it should be removed from the playlist """
-def test_that_a_track_can_be_removed():
+""" When there are no tracks in the playlist, an empty playlist should be returned when get_playlist() is called"""
+def test_empty_list_is_returned_when_no_tracks_have_been_added():
     mt = MusicTracker()
-    mt.add(Track("Waterloo", "ABBA"))
-    mt.add(Track("Shape of You", "Ed Sheeran"))
-    mt.add(Track("Dancing Queen", "ABBA"))
-    mt.remove(Track("Dancing Queen", "ABBA"))
-    assert mt.get_playlist() == ["Waterloo - ABBA", "Shape of You - Ed Sheeran"], "Should return: ['Waterloo - ABBA', 'Shape of You - Ed Sheeran']" # --> ["Waterloo - ABBA", "Shape of You - Ed Sheeran"]
+    assert mt.get_playlist() == []
+
+# """ When we remove a track, it should be removed from the playlist """
+# def test_that_a_track_can_be_removed():
+#     mt = MusicTracker()
+#     mt.add(Track("Waterloo", "ABBA"))
+#     mt.add(Track("Shape of You", "Ed Sheeran"))
+#     mt.add(Track("Dancing Queen", "ABBA"))
+#     mt.remove(Track("Dancing Queen", "ABBA"))
+#     assert mt.get_playlist() == ["Waterloo - ABBA", "Shape of You - Ed Sheeran"], "Should return: ['Waterloo - ABBA', 'Shape of You - Ed Sheeran']" # --> ["Waterloo - ABBA", "Shape of You - Ed Sheeran"]

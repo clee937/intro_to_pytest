@@ -8,5 +8,7 @@ class MusicTracker():
     def get_playlist(self):
         return [track.title for track in self.playlist]
 
-    def remove(self, track):
-        self.playlist = [song for song in self.playlist if song.title != track.title]
+    # scope creep
+
+    # def remove(self, track):
+    #     self.playlist = [song for song in self.playlist if song.title != track.title]
